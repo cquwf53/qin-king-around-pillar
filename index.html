@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ede5d6">
+  <title>秦王绕柱 · 咸阳宫的小剧场</title>
+  <style>
+    :root { color-scheme: light; font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; color: #3a3830; background: #ede5d6; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100svh; padding: 38px 22px 26px; display: grid; place-items: center; background: radial-gradient(ellipse at 50% 20%, #faf4e5, #e9dfce); }
+    main { width: min(1120px, 100%); }
+    header { margin: 0 5px 24px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    .eyebrow { color: #a7784c; font-size: 10px; letter-spacing: .3em; font-weight: 650; }
+    h1 { margin: 10px 0 9px; font-family: "Songti SC", "SimSun", serif; font-size: clamp(33px, 5.2vw, 52px); font-weight: 500; letter-spacing: .17em; }
+    .subtitle { margin: 0; color: #918372; font-size: 12px; letter-spacing: .08em; line-height: 1.8; }
+    .seal { width: 51px; height: 65px; display: grid; place-content: center; border: 2px solid #a84e3b; outline: 1px solid #a84e3b; outline-offset: -6px; border-radius: 3px; color: #a84e3b; font-family: "Songti SC", "SimSun", serif; font-size: 19px; line-height: 1.3; text-align: center; transform: rotate(5deg); flex-shrink: 0; }
+    .stage { overflow: hidden; border: 1px solid #bca98d; border-radius: 12px; background: #d4bb93; box-shadow: 0 22px 60px #5841241c; }
+    .scene { display: block; width: 100%; height: auto; }
+    .toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 19px 24px; border-top: 1px solid #c6b393; background: #f8f0df; }
+    .line { margin: 0; font-family: "Songti SC", "SimSun", serif; font-size: 17px; letter-spacing: .12em; }
+    .line small { display: block; color: #92816a; margin-top: 5px; font-family: system-ui, sans-serif; font-size: 10px; letter-spacing: .08em; }
+    .controls { display: flex; gap: 8px; flex-shrink: 0; }
+    button { font: inherit; font-size: 12px; border: 1px solid #b5a084; border-radius: 5px; padding: 10px 15px; color: #68543f; background: transparent; cursor: pointer; transition: background .18s; }
+    button:first-child { background: #984937; color: #fff0d4; border-color: #984937; }
+    button:hover { background: #e7d6ba; }
+    button:first-child:hover { background: #7e3b2e; }
+    button:focus-visible { outline: 2px solid #987440; outline-offset: 4px; }
+    footer { margin: 18px 5px 0; display: flex; justify-content: space-between; gap: 16px; color: #9c8a72; font-size: 9px; letter-spacing: .16em; }
+    noscript p { text-align: center; font-size: 12px; padding: 12px; color: #745d40; }
+    @media (max-width: 600px) {
+      body { padding: 25px 12px 18px; }
+      header { margin-bottom: 19px; }
+      .eyebrow { font-size: 8px; letter-spacing: .2em; }
+      .subtitle { font-size: 10px; }
+      .seal { width: 42px; height: 56px; font-size: 16px; }
+      .toolbar { padding: 15px; flex-wrap: wrap; gap: 15px; }
+      .controls { margin-left: auto; }
+      .line { font-size: 15px; }
+      button { padding: 9px 13px; font-size: 11px; }
+      footer { font-size: 8px; letter-spacing: .06em; }
+    }
+    @media (prefers-reduced-motion: reduce) { button { transition: none; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <div class="eyebrow">HISTORY IN MOTION · 咸阳宫的小剧场</div>
+        <h1>秦王绕柱</h1>
+        <p class="subtitle">一根殿柱，两道身影，一场停不下来的追逐。</p>
+      </div>
+      <div class="seal" aria-label="咸阳">咸<br>阳</div>
+    </header>
+
+    <section class="stage" aria-label="秦王与荆轲绕柱追逐的二维小剧场">
+      <svg class="scene" viewBox="0 0 1120 680" role="img" aria-labelledby="scene-title scene-description" xmlns="http://www.w3.org/2000/svg">
+        <title id="scene-title">秦王绕柱的二维动画</title>
+        <desc id="scene-description">咸阳宫中，头戴冕冠、身穿黑金王袍的秦王，和束发、穿青色衣服、手持短匕首的荆轲绕着红色大殿柱追逐。人物跑到柱子后方时会被遮挡，跑到前方时则显示在柱子前面。两旁的侍臣着急地喊着王负剑。画面采用轻松的剪纸插画风，没有受伤或血腥描写。</desc>
+        <defs>
+          <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+            <stop stop-color="#bfa57e"/>
+            <stop offset="1" stop-color="#e3cda7"/>
+          </linearGradient>
+          <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+            <stop stop-color="#cebb96"/>
+            <stop offset="1" stop-color="#e9d9b8"/>
+          </linearGradient>
+          <linearGradient id="pillar" x1="0" y1="0" x2="1" y2="0">
+            <stop stop-color="#733d30"/>
+            <stop offset=".25" stop-color="#a95a40"/>
+            <stop offset=".54" stop-color="#bd6f4b"/>
+            <stop offset="1" stop-color="#79402f"/>
+          </linearGradient>
+          <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+            <stop stop-color="#e2c188"/>
+            <stop offset=".55" stop-color="#a2824f"/>
+            <stop offset="1" stop-color="#dfbd7b"/>
+          </linearGradient>
+          <pattern id="lattice" width="34" height="34" patternUnits="userSpaceOnUse">
+            <rect width="34" height="34" fill="#e1c692"/>
+            <path d="M 0 0 H 34 V 34 H 0 Z M 8 8 H 26 V 26 H 8 Z" fill="none" stroke="#816d4a" stroke-width="3"/>
+          </pattern>
+          <pattern id="beam-pattern" width="48" height="22" patternUnits="userSpaceOnUse">
+            <path d="M 2 18 V 4 H 42 V 15 H 12 V 10 H 32" fill="none" stroke="#c9a367" stroke-width="2"/>
+          </pattern>
+          <g id="window">
+            <rect x="-61" y="-100" width="122" height="205" rx="3" fill="#7c6646"/>
+            <rect x="-52" y="-91" width="104" height="187" fill="url(#lattice)"/>
+            <path d="M 0 -95 V 101 M -58 1 H 58" stroke="#826746" stroke-width="7"/>
+            <path d="M -68 108 H 69" stroke="#947b56" stroke-width="9"/>
+          </g>
+          <g id="courtier">
+            <ellipse cy="5" rx="31" ry="8" fill="#705b3d" opacity=".12"/>
+            <path d="M -19 -70 Q -30 -39 -29 -2 Q 0 10 29 -2 Q 27 -40 16 -71 Z" fill="#817c61" stroke="#67644c" stroke-width="2"/>
+            <path d="M -19 -65 L -38 -41 L -24 -20 L -12 -33 M 17 -65 L 33 -44 L 19 -24 L 9 -36" fill="#929076" stroke="#67644c" stroke-width="2"/>
+            <path d="M -10 -65 L 0 -49 L 12 -65 M -22 -22 Q 0 -12 22 -22" fill="none" stroke="#d1b88b" stroke-width="3"/>
+            <ellipse cy="-88" rx="18" ry="22" fill="#cba276" stroke="#8e7151" stroke-width="1.7"/>
+            <path d="M -19 -95 Q -21 -119 0 -119 Q 19 -119 19 -96 Z M -12 -116 V -129 H 12 V -115 Z" fill="#3b4439"/>
+            <path d="M -10 -88 h 4 M 6 -88 h 4" stroke="#4d4435" stroke-width="2" stroke-linecap="round"/>
+            <ellipse cy="-75" rx="4" ry="5" fill="#76513d"/>
+            <path d="M -4 -68 Q -7 -53 0 -45 Q 8 -57 4 -68 Z" fill="#4d4b3b"/>
+          </g>
+        </defs>
+
+        <rect width="1120" height="680" fill="url(#wall)"/>
+        <path d="M 0 135 L 184 116 H 936 L 1120 135 V 0 H 0 Z" fill="#514d3b"/>
+        <rect x="0" y="45" width="1120" height="49" fill="#6d4633"/>
+        <rect x="0" y="54" width="1120" height="22" fill="url(#beam-pattern)"/>
+        <path d="M 0 44 H 1120 M 0 91 H 1120" stroke="#b79258" stroke-width="5"/>
+        <path d="M 0 119 H 1120" stroke="#d4b584" stroke-width="5"/>
+        <g opacity=".7"><use href="#window" transform="translate(192 252)"/><use href="#window" transform="translate(927 252)"/></g>
+        <rect x="328" y="154" width="464" height="231" rx="3" fill="#a88e69" stroke="#947952" stroke-width="3"/>
+        <rect x="342" y="168" width="436" height="203" fill="#b7a078" stroke="#d2b78a" stroke-width="2"/>
+        <g fill="none" stroke="#cdb589" opacity=".6" stroke-width="3">
+          <path d="M 365 205 H 450 V 246 H 388 V 221 H 427 M 755 205 H 670 V 246 H 732 V 221 H 693"/>
+          <path d="M 367 338 H 455 M 664 338 H 753 M 365 294 H 413 V 270 M 755 294 H 707 V 270"/>
+        </g>
+        <g fill="#b18853" stroke="#705b3b" stroke-width="2">
+          <path d="M 355 343 H 765 L 747 359 H 373 Z"/>
+          <path d="M 382 359 V 390 H 399 V 359 M 721 359 V 390 H 738 V 359"/>
+        </g>
+        <path d="M 0 382 H 1120 V 680 H 0 Z" fill="url(#floor)"/>
+        <path d="M 0 395 H 1120 M 0 450 H 1120 M 0 526 H 1120 M 0 636 H 1120" stroke="#bca781" stroke-width="1.5" opacity=".65"/>
+        <path d="M 170 382 L -90 680 M 351 382 L 205 680 M 485 382 L 436 680 M 635 382 L 684 680 M 769 382 L 915 680 M 950 382 L 1210 680" stroke="#bca781" stroke-width="1.5" opacity=".65"/>
+        <path d="M 392 389 H 728 L 919 680 H 201 Z" fill="#b78a6466"/>
+        <path d="M 404 389 L 229 680 M 716 389 L 891 680" stroke="#d8b781" stroke-width="3" opacity=".7"/>
+
+        <g opacity=".84">
+          <use href="#courtier" transform="translate(99 456) scale(.93)"/>
+          <use href="#courtier" transform="translate(202 420) scale(.78)"/>
+          <use href="#courtier" transform="translate(1021 452) scale(.93)"/>
+          <use href="#courtier" transform="translate(922 419) scale(.78)"/>
+        </g>
+        <g id="advice" transform="translate(881 233)">
+          <path d="M -63 -30 H 71 Q 82 -30 82 -18 V 13 Q 82 25 70 25 H 25 L 3 43 L 7 25 H -63 Q -75 25 -75 13 V -18 Q -75 -30 -63 -30 Z" fill="#f6e6c5" stroke="#b59766" stroke-width="1.6"/>
+          <text x="4" y="5" fill="#8b4937" font-family="'Songti SC', 'SimSun', serif" font-size="23" text-anchor="middle" letter-spacing="3">王负剑！</text>
+        </g>
+
+        <g transform="translate(61 156)" fill="#dcb679" stroke="#78583e" stroke-width="2">
+          <path d="M 0 -25 V 8" fill="none"/>
+          <path d="M -21 10 Q -30 36 -20 65 H 20 Q 30 36 21 10 Z" fill="#be7950"/>
+          <path d="M -23 10 H 23 M -23 65 H 23 M -12 13 L -12 63 M 12 13 L 12 63"/>
+          <path d="M 0 65 V 88 M -5 86 V 98 M 0 86 V 101 M 5 86 V 98" stroke="#9e5038"/>
+        </g>
+        <g transform="translate(1059 156)" fill="#dcb679" stroke="#78583e" stroke-width="2">
+          <path d="M 0 -25 V 8" fill="none"/>
+          <path d="M -21 10 Q -30 36 -20 65 H 20 Q 30 36 21 10 Z" fill="#be7950"/>
+          <path d="M -23 10 H 23 M -23 65 H 23 M -12 13 L -12 63 M 12 13 L 12 63"/>
+          <path d="M 0 65 V 88 M -5 86 V 98 M 0 86 V 101 M 5 86 V 98" stroke="#9e5038"/>
+        </g>
+
+        <ellipse cx="560" cy="493" rx="272" ry="108" fill="none" stroke="#9b7f55" stroke-dasharray="3 13" stroke-width="2" opacity=".22"/>
+        <ellipse cx="568" cy="510" rx="115" ry="26" fill="#674f3330"/>
+        <g id="shadows" fill="#5b4d35" opacity=".15"/>
+        <g id="dust-layer" fill="#f6e7c7"/>
+
+        <!-- Actors switch between these two layers to pass behind and in front of the pillar. -->
+        <g id="behind-pillar"/>
+
+        <g id="central-pillar">
+          <path d="M 486 487 L 504 469 H 616 L 634 487 V 513 Q 560 534 486 513 Z" fill="#8e8569" stroke="#706950" stroke-width="2"/>
+          <path d="M 486 487 Q 560 506 634 487 M 496 505 Q 560 522 624 505" fill="none" stroke="#b7ac87" stroke-width="3"/>
+          <path d="M 510 92 H 610 V 483 Q 560 500 510 483 Z" fill="url(#pillar)" stroke="#6f3c2e" stroke-width="2.5"/>
+          <path d="M 528 112 V 463" stroke="#d58d5e" stroke-width="3" opacity=".4"/>
+          <path d="M 593 112 V 475" stroke="#633c30" stroke-width="6" opacity=".3"/>
+          <path d="M 505 111 Q 560 124 615 111 V 127 Q 560 140 505 127 Z M 507 442 Q 560 455 613 442 V 460 Q 560 473 507 460 Z" fill="url(#gold)" stroke="#80613c" stroke-width="2"/>
+          <path d="M 509 122 Q 560 135 611 122 M 511 451 Q 560 465 609 451" fill="none" stroke="#f0d09b" stroke-width="2"/>
+          <g fill="none" stroke="#c3925a" stroke-linejoin="round" opacity=".62">
+            <path d="M 531 167 Q 589 184 581 211 Q 572 236 545 218 Q 522 203 540 194 Q 558 187 573 208 Q 595 241 573 269 Q 546 298 538 274 Q 534 258 554 261 Q 588 269 581 304 Q 574 331 547 315 Q 528 304 539 295" stroke-width="4"/>
+            <path d="M 533 168 L 539 153 L 551 163 L 560 153 L 566 174 M 578 216 l 13 -6 M 548 221 l -13 12 M 578 274 l 13 7 M 545 310 l -15 8" stroke-width="3"/>
+            <path d="M 527 378 H 593 V 403 H 538 V 387 H 580" stroke-width="3"/>
+          </g>
+          <rect x="495" y="86" width="130" height="21" rx="3" fill="#a78550" stroke="#735635" stroke-width="2"/>
+          <path d="M 488 77 H 632 L 621 90 H 500 Z" fill="#c8a367" stroke="#735635" stroke-width="2"/>
+        </g>
+
+        <g id="in-front-of-pillar"/>
+
+        <!-- Character templates stay vector-native; JavaScript only changes their poses and depth. -->
+        <defs>
+          <g id="king-art" stroke-linecap="round" stroke-linejoin="round">
+            <g class="leg-back" transform="translate(-10 -49)"><path d="M 0 0 L -8 25 L -20 42" fill="none" stroke="#363d30" stroke-width="15"/><path d="M -29 43 H -6" stroke="#272e25" stroke-width="10"/></g>
+            <g class="back-arm" transform="translate(8 -127)"><path d="M 0 0 L -28 19 L -44 4" fill="none" stroke="#3a4232" stroke-width="19"/><circle cx="-44" cy="4" r="7" fill="#d6a576" stroke="#986c48" stroke-width="1.5"/></g>
+            <g class="coat-tail" transform="translate(-17 -86)"><path d="M 0 0 Q -28 13 -59 3 L -45 19 L -64 29 Q -25 39 10 22 Z" fill="#323b2d" stroke="#b19451" stroke-width="2"/><path d="M -8 15 Q -29 24 -43 19" fill="none" stroke="#72704b" stroke-width="2"/></g>
+            <g class="sword" transform="translate(-26 -111) rotate(-19)"><path d="M 0 0 V 92" stroke="#604639" stroke-width="9"/><path d="M 0 16 V 82" stroke="#b49358" stroke-width="3"/><path d="M -10 0 H 10 M 0 -20 V -3" stroke="#d4b573" stroke-width="5"/></g>
+            <path d="M -19 -142 Q 8 -155 28 -137 L 34 -97 L 28 -54 Q 0 -40 -33 -57 L -31 -100 Z" fill="#343e2e" stroke="#242f26" stroke-width="2.5"/>
+            <path d="M -11 -143 L 6 -121 L 24 -140 M -30 -82 Q 0 -68 33 -84 M -30 -59 Q -2 -44 28 -58" fill="none" stroke="#c5a361" stroke-width="5"/>
+            <rect x="-1" y="-83" width="15" height="12" rx="2" fill="#e0bd77" stroke="#8a713f" stroke-width="1.5"/>
+            <g fill="none" stroke="#bc9a55" stroke-width="2"><path d="M -4 -111 Q -18 -111 -12 -101 Q 0 -90 10 -104 Q 16 -116 5 -115 Q -4 -110 4 -101 M 9 -113 l 5 -9 5 8 M -10 -99 l -8 6"/><path d="M -18 -64 l 5 5 -5 4 M -3 -60 l 5 5 -5 4 M 12 -62 l 5 5 -5 4"/></g>
+            <g class="leg-front" transform="translate(12 -49)"><path d="M 0 0 L 8 25 L 16 43" fill="none" stroke="#414732" stroke-width="16"/><path d="M 8 43 H 34" stroke="#292f25" stroke-width="11"/><path d="M 7 40 H 29" stroke="#b19a5b" stroke-width="2"/></g>
+            <path d="M -3 -162 L -5 -142 Q 5 -130 17 -143 L 17 -163 Z" fill="#c69765"/>
+            <path d="M -19 -183 Q -14 -206 9 -204 Q 31 -202 32 -180 L 41 -170 L 32 -166 L 30 -150 Q 10 -137 -10 -153 L -20 -169 Z" fill="#d9ad79" stroke="#8c6643" stroke-width="2"/>
+            <path d="M -20 -176 Q -28 -199 -13 -206 Q 10 -215 25 -203 L 31 -189 L 13 -195 L 0 -188 L -11 -173 Z" fill="#252d25"/>
+            <path d="M -12 -170 Q -26 -181 -25 -165 Q -23 -154 -13 -162" fill="#c79b6b" stroke="#8c6643" stroke-width="1.5"/>
+            <path d="M 9 -186 L 23 -181" stroke="#363326" stroke-width="3"/>
+            <ellipse cx="22" cy="-175" rx="4" ry="5" fill="#fff0d2"/><circle cx="24" cy="-175" r="2.3" fill="#3d3828"/>
+            <path d="M 18 -157 Q 25 -163 30 -156 M 19 -155 L 6 -151" fill="none" stroke="#353429" stroke-width="2.5"/>
+            <g class="beard" transform="translate(8 -150)"><path d="M -9 -6 Q 1 6 18 -3 Q 17 18 6 32 L 2 19 L -3 29 Q -12 12 -9 -6 Z" fill="#30362a"/><path d="M 4 6 L 5 20" stroke="#737052" stroke-width="1.5"/></g>
+            <path d="M -15 -204 L -12 -222 H 16 L 21 -204 Z" fill="#303729" stroke="#b79754" stroke-width="2"/>
+            <path d="M -33 -226 L 14 -236 L 44 -223 L -5 -212 Z" fill="#333c2e" stroke="#c6a569" stroke-width="3"/>
+            <path d="M -32 -222 L -5 -208 L 44 -219" fill="none" stroke="#ac8c51" stroke-width="4"/>
+            <g class="crown-beads" transform="translate(26 -215)" stroke="#b3975d" stroke-width="1.2" fill="#e0c17e"><path d="M 0 0 V 35 M 8 -2 V 30 M -48 -1 V 29"/><circle cy="10" r="2.5"/><circle cy="21" r="2.5"/><circle cy="33" r="2.5"/><circle cx="8" cy="8" r="2.5"/><circle cx="8" cy="19" r="2.5"/><circle cx="8" cy="29" r="2.5"/><circle cx="-48" cy="10" r="2.5"/><circle cx="-48" cy="23" r="2.5"/></g>
+            <g class="arm-front" transform="translate(22 -127)"><path d="M 0 0 L 23 19 L 44 -6" fill="none" stroke="#3e4732" stroke-width="20"/><path d="M 37 1 L 44 -6" stroke="#d1b374" stroke-width="12"/><path d="M 45 -7 L 49 -16" stroke="#dbae7b" stroke-width="11"/></g>
+            <path class="sweat" d="M 44 -198 Q 34 -184 44 -181 Q 52 -184 44 -198 Z" fill="#99bfc0" stroke="#679394" stroke-width="1.2"/>
+          </g>
+
+          <g id="jingke-art" stroke-linecap="round" stroke-linejoin="round">
+            <g class="leg-back" transform="translate(-10 -47)"><path d="M 0 0 L -7 23 L -17 42" fill="none" stroke="#68796b" stroke-width="14"/><path d="M -28 44 H -6" stroke="#404a3e" stroke-width="10"/></g>
+            <g class="back-arm" transform="translate(-15 -126)"><path d="M 0 0 L -25 18 L -38 -3" fill="none" stroke="#75968a" stroke-width="19"/><circle cx="-38" cy="-3" r="6" fill="#d6b08b"/></g>
+            <g class="coat-tail" transform="translate(-18 -83)"><path d="M 0 0 Q -27 10 -59 -6 L -46 15 L -63 23 Q -29 34 9 18 Z" fill="#64887d" stroke="#42675e" stroke-width="2"/><path d="M -3 15 Q -26 25 -41 16" fill="none" stroke="#a7b8a0" stroke-width="2"/></g>
+            <path d="M -19 -144 Q 3 -151 22 -137 L 33 -97 L 26 -49 Q 1 -38 -30 -51 L -33 -95 Z" fill="#77998b" stroke="#41675b" stroke-width="2.5"/>
+            <path d="M -12 -143 L 11 -111 L 24 -136 M -30 -83 Q 0 -71 31 -86 M -28 -53 Q 0 -44 26 -53" fill="none" stroke="#dad4aa" stroke-width="5"/>
+            <path d="M 1 -78 L 9 -76 L 18 -47 L 5 -51 Z" fill="#d4c797" stroke="#948d67" stroke-width="1.3"/>
+            <g class="leg-front" transform="translate(11 -47)"><path d="M 0 0 L 7 24 L 16 43" fill="none" stroke="#809386" stroke-width="15"/><path d="M 8 44 H 32" stroke="#414f43" stroke-width="11"/><path d="M 4 27 L 16 31 M 6 34 L 18 37" stroke="#c7c7a4" stroke-width="2"/></g>
+            <path d="M -6 -164 L -6 -142 Q 4 -130 15 -143 L 16 -164 Z" fill="#c99d79"/>
+            <path d="M -21 -189 Q -13 -208 10 -203 Q 30 -200 30 -181 L 38 -171 L 30 -166 L 27 -151 Q 6 -141 -12 -155 L -21 -171 Z" fill="#d9b18b" stroke="#927155" stroke-width="2"/>
+            <path d="M -22 -174 Q -31 -198 -14 -207 Q 5 -217 23 -203 L 29 -188 L 15 -194 L 1 -187 L -10 -173 Z" fill="#303d36"/>
+            <path d="M -14 -204 L -11 -222 Q 2 -231 14 -220 L 15 -204 Z" fill="#303d36" stroke="#25332e" stroke-width="2"/>
+            <path d="M -13 -207 L 16 -207" stroke="#b29d65" stroke-width="5"/>
+            <path d="M -13 -167 Q -26 -179 -26 -164 Q -23 -155 -13 -160" fill="#cea380" stroke="#927155" stroke-width="1.5"/>
+            <path d="M 7 -185 L 23 -182 M 15 -176 H 24" stroke="#354137" stroke-width="2.7"/>
+            <path d="M 16 -155 L 26 -158" stroke="#875e47" stroke-width="2"/>
+            <path d="M -21 -189 Q -2 -197 28 -191" stroke="#bda56f" stroke-width="5" fill="none"/>
+            <g class="head-tie" transform="translate(-20 -189)"><path d="M 0 0 Q -19 2 -35 -8 L -30 4 L -44 8 Q -17 17 0 5 Z" fill="#bca06b" stroke="#8c8059" stroke-width="1.3"/></g>
+            <g class="arm-front" transform="translate(21 -126)">
+              <path d="M 0 0 L 23 -7 L 43 -5" fill="none" stroke="#86a493" stroke-width="19"/>
+              <path d="M 37 -5 H 45" stroke="#e0d6ac" stroke-width="13"/>
+              <circle cx="49" cy="-5" r="7" fill="#d9b18b" stroke="#947352" stroke-width="1.3"/>
+              <g transform="translate(52 -7) rotate(-13)"><path d="M -4 0 H 11" stroke="#7e6544" stroke-width="6"/><path d="M 11 -8 V 8" stroke="#c4a265" stroke-width="4"/><path d="M 13 -5 L 48 0 L 13 5 Z" fill="#dce3d7" stroke="#6d8b85" stroke-width="1.5"/><path d="M 15 0 H 42" stroke="#99b2a9" stroke-width="1"/></g>
+            </g>
+          </g>
+        </defs>
+
+        <g fill="#f9edcd" opacity=".12" pointer-events="none"><circle cx="387" cy="143" r="2"/><circle cx="767" cy="252" r="1.5"/><circle cx="851" cy="139" r="2"/><circle cx="293" cy="324" r="1.5"/></g>
+        <path d="M 19 148 V 129 H 38 M 1082 129 H 1101 V 148 M 19 642 V 661 H 38 M 1082 661 H 1101 V 642" fill="none" stroke="#806d4a" stroke-opacity=".38" stroke-width="1"/>
+        <text x="46" y="638" fill="#967d56" font-family="system-ui, sans-serif" font-size="9" letter-spacing="2">XIANYANG PALACE · 227 BCE</text>
+      </svg>
+
+      <div class="toolbar">
+        <p class="line" id="caption">柱子：这班，非上不可。<small>历史梗趣味演绎 · 两个人的圆周运动</small></p>
+        <div class="controls">
+          <button id="play-button" type="button" aria-pressed="false">暂停追逐</button>
+          <button id="speed-button" type="button" aria-pressed="false">正常 ×1</button>
+        </div>
+      </div>
+      <noscript><p>启用 JavaScript 后，小剧场即可开始播放。</p></noscript>
+    </section>
+    <footer><span>A VERY BUSY PILLAR.</span><span>身法可以绕，班还是得上。</span></footer>
+  </main>
+
+  <script>
+    (() => {
+      'use strict';
+      const NS = 'http://www.w3.org/2000/svg';
+      const byId = id => document.getElementById(id);
+      const behind = byId('behind-pillar');
+      const ahead = byId('in-front-of-pillar');
+      const playButton = byId('play-button');
+      const speedButton = byId('speed-button');
+      const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+      let playing = !preference.matches;
+      let speed = 1;
+      let time = 0;
+      let previous = null;
+      let frame = null;
+      const TAU = Math.PI * 2;
+
+      function element(tag, attributes = {}) {
+        const node = document.createElementNS(NS, tag);
+        Object.entries(attributes).forEach(([key, value]) => node.setAttribute(key, value));
+        return node;
+      }
+
+      function createActor(templateId, phase, label, color) {
+        const root = element('g');
+        const facing = element('g');
+        const pose = element('g');
+        const artwork = byId(templateId).cloneNode(true);
+        artwork.removeAttribute('id');
+        pose.appendChild(artwork);
+        facing.appendChild(pose);
+        root.appendChild(facing);
+        const name = element('text', { x: 0, y: 28, 'text-anchor': 'middle', fill: color, 'font-size': 14, 'font-family': "'Songti SC', 'SimSun', serif", 'letter-spacing': 3 });
+        name.textContent = label;
+        root.appendChild(name);
+        ahead.appendChild(root);
+        const shadow = element('ellipse', { rx: 39, ry: 10 });
+        byId('shadows').appendChild(shadow);
+        return { root, facing, pose, artwork, shadow, phase, depth: 0,
+          frontLeg: artwork.querySelector('.leg-front'),
+          backLeg: artwork.querySelector('.leg-back'),
+          frontArm: artwork.querySelector('.arm-front'),
+          backArm: artwork.querySelector('.back-arm'),
+          coat: artwork.querySelector('.coat-tail'),
+          beads: artwork.querySelector('.crown-beads'),
+          beard: artwork.querySelector('.beard'),
+          headTie: artwork.querySelector('.head-tie'),
+          sword: artwork.querySelector('.sword'),
+          sweat: artwork.querySelector('.sweat'),
+          isKing: templateId === 'king-art' };
+      }
+
+      const actors = [
+        createActor('king-art', .38, '秦王', '#635333'),
+        createActor('jingke-art', .38 - 1.75, '荆轲', '#4c7568')
+      ];
+      const dust = Array.from({ length: 12 }, () => {
+        const puff = element('ellipse', { rx: 8, ry: 3 });
+        byId('dust-layer').appendChild(puff);
+        return puff;
+      });
+
+      function poseActor(actor, t) {
+        const angle = t * TAU / 7.4 + actor.phase;
+        const depth = Math.sin(angle);
+        const x = 560 + Math.cos(angle) * 266;
+        const y = 489 + depth * 97;
+        const scale = .8 + (depth + 1) * .115;
+        // The horizontal tangent changes smoothly at each end of the ellipse.
+        const tangent = -Math.sin(angle);
+        const facing = Math.tanh(tangent * 4.5);
+        const stride = t * TAU / .47 + actor.phase * 2;
+        const kick = Math.sin(stride) * 35;
+        const bob = -Math.abs(Math.sin(stride)) * 6;
+        const lean = 8 + Math.sin(stride * 2) * 1.4;
+        actor.depth = depth;
+        actor.root.setAttribute('transform', `translate(${x.toFixed(2)} ${y.toFixed(2)}) scale(${scale.toFixed(3)})`);
+        actor.facing.setAttribute('transform', `scale(${facing.toFixed(3)} 1)`);
+        actor.pose.setAttribute('transform', `translate(0 ${bob.toFixed(2)}) rotate(${lean.toFixed(2)} 0 -75)`);
+        const legHeight = actor.isKing ? -49 : -47;
+        actor.frontLeg.setAttribute('transform', `translate(${actor.isKing ? 12 : 11} ${legHeight}) rotate(${kick})`);
+        actor.backLeg.setAttribute('transform', `translate(-10 ${legHeight}) rotate(${-kick})`);
+        actor.frontArm.setAttribute('transform', `translate(${actor.isKing ? 22 : 21} ${actor.isKing ? -127 : -126}) rotate(${actor.isKing ? -kick * .7 : Math.sin(stride) * 12})`);
+        actor.backArm.setAttribute('transform', `translate(${actor.isKing ? 8 : -15} ${actor.isKing ? -127 : -126}) rotate(${kick * .8})`);
+        actor.coat.setAttribute('transform', `translate(${actor.isKing ? -17 : -18} ${actor.isKing ? -86 : -83}) rotate(${Math.sin(t * 13 + actor.phase) * 8})`);
+        if (actor.beads) actor.beads.setAttribute('transform', `translate(26 -215) rotate(${Math.sin(stride) * 12})`);
+        if (actor.beard) actor.beard.setAttribute('transform', `translate(8 -150) rotate(${-8 + Math.sin(stride) * 11})`);
+        if (actor.headTie) actor.headTie.setAttribute('transform', `translate(-20 -189) rotate(${Math.sin(stride + 1) * 12})`);
+        if (actor.sword) actor.sword.setAttribute('transform', `translate(-26 -111) rotate(${-19 + Math.sin(stride) * 6})`);
+        if (actor.sweat) actor.sweat.setAttribute('opacity', .5 + Math.sin(t * 8) * .4);
+        actor.shadow.setAttribute('cx', x.toFixed(2));
+        actor.shadow.setAttribute('cy', (y + 1).toFixed(2));
+        actor.shadow.setAttribute('rx', (39 * scale).toFixed(2));
+        actor.shadow.setAttribute('ry', (10 * scale).toFixed(2));
+        actor.shadow.setAttribute('opacity', (.65 + depth * .15).toFixed(2));
+
+        const layer = depth < 0 ? behind : ahead;
+        if (actor.root.parentNode !== layer) layer.appendChild(actor.root);
+        return { x, y, tangent, scale };
+      }
+
+      function render(t) {
+        const positions = actors.map(actor => poseActor(actor, t));
+        // Sort the actual SVG elements by depth, including when both share a layer.
+        for (const layer of [behind, ahead]) {
+          const members = actors.filter(actor => actor.root.parentNode === layer).sort((a, b) => a.depth - b.depth);
+          members.forEach(actor => layer.appendChild(actor.root));
+        }
+        dust.forEach((puff, index) => {
+          const actorIndex = index % 2;
+          const position = positions[actorIndex];
+          const life = (t * 2.1 + index / 6) % 1;
+          const direction = Math.sign(position.tangent) || 1;
+          puff.setAttribute('cx', position.x - direction * (life * 43 + 10));
+          puff.setAttribute('cy', position.y + 5 - Math.sin(life * Math.PI) * 8);
+          puff.setAttribute('rx', 3 + life * 10);
+          puff.setAttribute('ry', 2 + life * 3);
+          puff.setAttribute('opacity', Math.sin(life * Math.PI) * .42);
+        });
+        const excitement = Math.max(0, Math.sin(t * 2.7));
+        byId('advice').setAttribute('transform', `translate(881 ${233 - excitement * 3}) rotate(${Math.sin(t * 2.7) * 1.3})`);
+      }
+
+      function animate(timestamp) {
+        frame = null;
+        if (!playing || document.hidden) { previous = null; return; }
+        if (previous !== null) time += Math.min((timestamp - previous) / 1000, .05) * speed;
+        previous = timestamp;
+        render(time);
+        frame = requestAnimationFrame(animate);
+      }
+
+      function synchronize() {
+        if (frame !== null) cancelAnimationFrame(frame);
+        frame = null;
+        previous = null;
+        playButton.textContent = playing ? '暂停追逐' : '继续绕柱';
+        playButton.setAttribute('aria-pressed', String(!playing));
+        speedButton.textContent = speed === 1 ? '正常 ×1' : '加急 ×1.7';
+        speedButton.setAttribute('aria-pressed', String(speed !== 1));
+        if (playing && !document.hidden) frame = requestAnimationFrame(animate);
+      }
+
+      playButton.addEventListener('click', () => { playing = !playing; synchronize(); });
+      speedButton.addEventListener('click', () => { speed = speed === 1 ? 1.7 : 1; synchronize(); });
+      preference.addEventListener('change', event => { playing = !event.matches; synchronize(); });
+      document.addEventListener('visibilitychange', synchronize);
+      render(0);
+      synchronize();
+    })();
+  </script>
+</body>
+</html>
